@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	<h3>S.No.= <span th:text="${todo.id}" >   </span></h3>
+	<form th:action="@{/todo/updateTodo}" th:object="${todo}" method="post">
+	<div class="form-group">
+    <input type="hidden" class="form-control" th:field="*{id}">
+  </div>	
+  
+  <div class="form-row">
+    <div class="col">
+      <input type="text" th:field="*{work}" class="form-control">
+      <p style="color:Tomato;" th:each="er : ${#fields.errors('work')}" th:text="${er}">err</p>
+    </div>
+    <div class="col">
+      <input type="text" th:field="*{priority}" class="form-control" >
+    </div>
+    <div class="col">
+      <input type="date" name="lastDate" th:value="${todo.lastDate}"  class="form-control">
+    </div>
+    
+    <div class="col">
+     <select th:field="*{status}">
+    	<option th:value="'panding'">panding</option>
+    	<option th:value="'working'" th:text="working"></option>
+    	<option th:value="'completed'" th:text="completed"></option>
+	</select>
+    </div>
+   
+ 
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>
+</body>
+</html>
