@@ -22,15 +22,16 @@ public class Todo {
 	// @Pattern(regexp = "^[a-zA-Z0-9]$", message = "please enter valid charactor")
 	// @Pattern(regexp = "^[a-zA-Z]{6,12}$", message = "username must be of 6 to
 	// 12")
-	private String work;
-	@Min(value = 0, message = "min priority is 0")
-	@Max(value = 10, message = "max priority is 10")
-	private int priority;
-	private LocalDate creationTime = LocalDate.now();
-	@FutureOrPresent
-	@DateTimeFormat(pattern = "dd-mm-yyyy")
-	// @DateTimeFormat(pattern = "yyyy-mm-dd")
-	private LocalDate lastDate;
-
-	private String status = "panding";
+//	private String work;
+//	@Min(value = 0, message = "min priority is 0")
+//	@Max(value = 10, message = "max priority is 10")
+//	private int priority;
+//	private LocalDate creationTime = LocalDate.now();
+//	@FutureOrPresent
+//	@DateTimeFormat(pattern = "dd-mm-yyyy")
+//	// @DateTimeFormat(pattern = "yyyy-mm-dd")
+//	private LocalDate lastDate;
+//
+//	private String status = "panding";
 }
+// its working properly by sachin tomar
